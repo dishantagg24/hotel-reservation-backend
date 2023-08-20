@@ -1,0 +1,5 @@
+.env
+.env-cmdrc.json
+/env.cmdrc.json
+./test
+node_modules
