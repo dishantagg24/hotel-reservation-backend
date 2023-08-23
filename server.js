@@ -6,9 +6,11 @@ const authRoute = require('./routes/auth');
 const hotelsRoute = require('./routes/hotels');
 const userRoute = require('./routes/user');
 const roomsRoute = require('./routes/rooms');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
+app.use(cookieParser());
 app.use(express.json());
 
 app.use('/api/auth', authRoute);
