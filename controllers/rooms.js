@@ -25,6 +25,13 @@ const updateRoom = async (req, res) => {
         res.status(500).json(error);
     }
 }
+const updateRoomAvailability = async (req, res) => {
+    try {
+        await Room.updateOne({ "roomNumbers._id": req.params.id }, { $push: { "roomNumbers.$.unavailableDates": req.body.dates } })
+    } catch (error) {
+        res.status(500).json(error);
+    }
+}
 const deleteRoom = async (req, res) => {
     const hotelId = req.params.hotelId;
     try {
@@ -57,4 +64,4 @@ const getAllRooms = async (req, res) => {
         res.status(500).json(error);
     }
 }
-module.exports = { createRoom, updateRoom, deleteRoom, getRoom, getAllRooms }
+module.exports = { createRoom, updateRoom, updateRoomAvailability, deleteRoom, getRoom, getAllRooms }
