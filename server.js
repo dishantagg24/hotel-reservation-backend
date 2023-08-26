@@ -18,7 +18,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoute);
 app.use('/api/hotels', hotelsRoute);
-app.use('/api/user', userRoute);
+app.use('/api/users', userRoute);
 app.use('/api/rooms', roomsRoute);
 
 const PORT = process.env.PORT || 8000;
