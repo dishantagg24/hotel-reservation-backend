@@ -13,7 +13,7 @@ const roomsRoute = require('./routes/rooms');
 const app = express();
 
 app.use(cors({
-    origin: 'https://hotel-reservation-frontend-dishantagg24.vercel.app',
+    origin: '*',
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type,Authorization'
 }));
