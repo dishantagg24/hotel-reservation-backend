@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // app.use('/api/auth', authRoute);
-app.use('/hotels', hotelsRoute);
+// app.use('/api/hotels', hotelsRoute);
 // app.use('/api/users', userRoute);
 // app.use('/api/rooms', roomsRoute);
 
@@ -30,9 +30,9 @@ const PORT = process.env.PORT || 8000;
 // app.use('/', (req, res) => {
 //     res.send("Hello");
 // })
-// app.use('/api/hotels', (req, res) => {
-//     res.send("Hello Hotel");
-// })
+app.use('/api/hotels', (req, res) => {
+    res.send("Hello Hotel");
+})
 
 app.listen(PORT, () => {
     mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }).then(() => console.log('Connected Successfully')).catch((err) => { console.error(err); });
