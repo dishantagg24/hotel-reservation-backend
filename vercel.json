@@ -8,20 +8,20 @@
     ],
     "routes": [
         {
-            "src": "/api/auth",
-            "dest": "/server.js"
+            "src": "/api/auth/.*",
+            "dest": "/api/auth"
         },
         {
-            "src": "/api/hotels",
-            "dest": "/server.js"
+            "src": "/api/hotels/.*",
+            "dest": "/api/hotels"
         },
         {
-            "src": "/api/users",
-            "dest": "/server.js"
+            "src": "/api/users/.*",
+            "dest": "/api/users"
         },
         {
-            "src": "/api/rooms",
-            "dest": "/server.js"
+            "src": "/api/rooms/.*",
+            "dest": "/api/rooms"
         },
         {
             "src": "/(.*)",
