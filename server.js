@@ -20,10 +20,10 @@ app.use(cors({
 app.use(cookieParser());
 app.use(express.json());
 
-app.use('/api/auth', authRoute);
-app.use('/api/hotels', hotelsRoute);
-app.use('/api/users', userRoute);
-app.use('/api/rooms', roomsRoute);
+app.use('/auth', authRoute);
+app.use('/hotels', hotelsRoute);
+app.use('/users', userRoute);
+app.use('/rooms', roomsRoute);
 
 const PORT = process.env.PORT || 8000;
 
