@@ -57,7 +57,6 @@ const getRoom = async (req, res) => {
 }
 
 const getAllRooms = async (req, res) => {
-    // res.send("Hello");
     try {
         const rooms = await Room.find();
         res.status(200).json(rooms);
