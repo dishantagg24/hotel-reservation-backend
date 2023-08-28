@@ -20,15 +20,18 @@ app.use(cors({
 app.use(cookieParser());
 app.use(express.json());
 
-app.use('/auth', authRoute);
-app.use('/hotels', hotelsRoute);
-app.use('/users', userRoute);
-app.use('/rooms', roomsRoute);
+app.use('/api/auth', authRoute);
+app.use('/api/hotels', hotelsRoute);
+app.use('/api/users', userRoute);
+app.use('/api/rooms', roomsRoute);
 
 const PORT = process.env.PORT || 8000;
 
 app.use('/', (req, res) => {
     res.send("Hello");
+})
+app.use('/hotels', (req, res) => {
+    res.send("Hello Hotel");
 })
 
 app.listen(PORT, () => {
