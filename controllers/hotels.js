@@ -68,6 +68,7 @@ const CountByType = async (req, res) => {
 }
 
 const GetAllHotels = async (req, res) => {
+    console.log("I m running");
     const { min, max, limit, ...others } = req.query;
     try {
         const allhotesData = await Hotel.find({ ...others, cheapestPrice: { $gt: min | 1, $lt: max || 999 } }).limit(req.query.limit);
