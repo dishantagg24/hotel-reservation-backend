@@ -69,13 +69,13 @@ const CountByType = async (req, res) => {
 
 const GetAllHotels = async (req, res) => {
     console.log("I m running");
-    const { min, max, limit, ...others } = req.query;
-    try {
-        const allhotesData = await Hotel.find({ ...others, cheapestPrice: { $gt: min | 1, $lt: max || 999 } }).limit(req.query.limit);
-        res.status(200).json(allhotesData);
-    } catch (error) {
-        res.status(500).json(error);
-    }
+    // const { min, max, limit, ...others } = req.query;
+    // try {
+    //     const allhotesData = await Hotel.find({ ...others, cheapestPrice: { $gt: min | 1, $lt: max || 999 } }).limit(req.query.limit);
+    //     res.status(200).json(allhotesData);
+    // } catch (error) {
+    //     res.status(500).json(error);
+    // }
 }
 
 const GetHotelRooms = async (req, res) => {
