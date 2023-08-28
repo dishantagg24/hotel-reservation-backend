@@ -8,20 +8,20 @@
     ],
     "routes": [
         {
-            "src": "/api/auth/.*",
-            "dest": "/api/auth"
+            "src": "/api/auth/(.*)",
+            "dest": "/api/auth/$1"
         },
         {
-            "src": "/api/hotels/.*",
-            "dest": "/api/hotels"
+            "src": "/api/hotels/(.*)",
+            "dest": "/api/hotels/$1"
         },
         {
-            "src": "/api/users/.*",
-            "dest": "/api/users"
+            "src": "/api/users/(.*)",
+            "dest": "/api/users/$1"
         },
         {
-            "src": "/api/rooms/.*",
-            "dest": "/api/rooms"
+            "src": "/api/rooms/(.*)",
+            "dest": "/api/rooms/$1"
         },
         {
             "src": "/(.*)",
