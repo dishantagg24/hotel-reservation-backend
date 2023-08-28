@@ -9,19 +9,19 @@
     "routes": [
         {
             "src": "/api/auth",
-            "dest": "server.js"
+            "dest": "/server.js"
         },
         {
             "src": "/api/hotels",
-            "dest": "server.js"
+            "dest": "/server.js"
         },
         {
             "src": "/api/users",
-            "dest": "server.js"
+            "dest": "/server.js"
         },
         {
             "src": "/api/rooms",
-            "dest": "server.js"
+            "dest": "/server.js"
         },
         {
             "src": "/(.*)",
