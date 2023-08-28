@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 8000;
 // app.use('/', (req, res) => {
 //     res.send("Hello");
 // })
-app.use('/hotels', (req, res) => {
+app.use('/api/hotels', (req, res) => {
     res.send("Hello Hotel");
 })
 
