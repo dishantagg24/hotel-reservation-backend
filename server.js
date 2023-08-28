@@ -27,9 +27,9 @@ app.use('/api/rooms', roomsRoute);
 
 const PORT = process.env.PORT || 8000;
 
-app.use('/', (req, res) => {
-    res.send("Hello");
-})
+// app.use('/', (req, res) => {
+//     res.send("Hello");
+// })
 app.use('/hotels', (req, res) => {
     res.send("Hello Hotel");
 })
