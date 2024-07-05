@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post('/', verifyAdmin, AddHotel);
 router.put('/:id', verifyAdmin, UpdateHotel);
-router.delete('/:id', verifyAdmin, DeleteHotel);
+router.delete('/:id', DeleteHotel);
 router.get('/find/:id', GetHotel);
 router.get('/countByCity', CountByCity);
 router.get('/countByType', CountByType);
