@@ -68,42 +68,14 @@ const CountByType = async (req, res) => {
 }
 
 const GetAllHotels = async (req, res) => {
+    const { min, max, limit, ...others } = req.query;
     try {
-        const { min = 1, max = 999, limit = 10, ...others } = req.query;
-
-        // Validate and parse query parameters
-        const minPrice = parseFloat(min);
-        const maxPrice = parseFloat(max);
-        const limitResults = parseInt(limit);
-
-        // Build the query object
-        const query = {
-            ...others,
-            cheapestPrice: { $gt: minPrice, $lt: maxPrice }
-        };
-
-        // Log the query for debugging
-        console.log("Executing query:", query);
-
-        // Fetch data from the database
-        const allHotelsData = await Hotel.find(query).limit(limitResults);
-
-        // Log the fetched data for debugging
-        console.log("Fetched hotels data:", allHotelsData);
-
-        // Send the response
-        res.status(200).json(allHotelsData);
+        const allhotesData = await Hotel.find({ ...others, cheapestPrice: { $gt: min | 1, $lt: max || 999 } }).limit(req.query.limit);
+        res.status(200).json(allhotesData);
     } catch (error) {
-        // Log the error for debugging
-        console.error("Error fetching hotels:", error);
-
-        // Send an error response
-        res.status(500).json({
-            message: "Internal server error",
-            error: error.message || "Unknown error"
-        });
+        res.status(500).json(error);
     }
-};
+}
 
 
 const GetHotelRooms = async (req, res) => {
