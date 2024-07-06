@@ -27,10 +27,20 @@ app.use('/api/rooms', roomsRoute);
 
 const PORT = process.env.PORT || 8000;
 
-app.use('/', (req, res) => {
-    res.send("Hello");
-})
+const startServer = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('Connected to DB');
 
-app.listen(PORT, () => {
-    mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }).then(() => console.log('Connected Successfully')).catch((err) => { console.error(err); });
-})
+        app.listen(PORT, () => {
+            console.log(`Server is listening on PORT: ${PORT}`);
+        });
+    } catch (error) {
+        console.error('Failed to connect to DB:', error);
+    }
+};
+
+startServer();
